@@ -1,4 +1,4 @@
-#Proses Kontrol
+# Proses Kontrol
 
 Proses kontrol dalam jaringan mengacu pada serangkaian mekanisme dan prosedur yang diterapkan untuk memastikan kinerja, keamanan, dan efisiensi jaringan komputer. Di tiap proses, terdiri dari adress dan data structure di kernel. 
 
