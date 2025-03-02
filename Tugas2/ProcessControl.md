@@ -48,10 +48,10 @@ Ada gambaran umum tentang sistem dengan ps aux. a untuk menunjukkan proses semua
 ~# ps aux 
 | USER | PID | %CPU | %MEM | VSZ | RSS | TTY | STAT | START | TIME COMMAND |
 |------|-----|------|------|-----|-----|-----|------|-------|--------------| 
-| root           1  7.9  0.1  21604 12852 ?        Ss   05:08   0:00 /sbin/init |
-| root           2  0.0  0.0   2616  1444 ?        Sl   05:08   0:00 /init |
-| root           6  0.0  0.0   3024   420 ?        Sl   05:08   0:00 plan9 --control-socket 6 --log-level 4 --server-fd 7 |
-| root          54  2.0  0.1  33896 12644 ?        S<s  05:08   0:00 /usr/lib/systemd/systemd-journald |
+| root |          1  7.9  0.1  21604 12852 ?        Ss   05:08   0:00 /sbin/init |
+| root |         2  0.0  0.0   2616  1444 ?        Sl   05:08   0:00 /init |
+| root |          6  0.0  0.0   3024   420 ?        Sl   05:08   0:00 plan9 --control-socket 6 --log-level 4 --server-fd 7 |
+| root | 54 | 2.0 | 0.1 | 33896 12644 ?        S<s  05:08   0:00 /usr/lib/systemd/systemd-journald |
 | root          97  2.2  0.0  23992  6028 ?        Ss   05:08   0:00 /usr/lib/systemd/systemd-udevd |
 | systemd+     155  1.7  0.1  21452 12024 ?        Ss   05:08   0:00 /usr/lib/systemd/systemd-resolved |
 | systemd+     156  1.0  0.0  91020  6552 ?        Ssl  05:08   0:00 /usr/lib/systemd/systemd-timesyncd |
@@ -63,7 +63,7 @@ Ada gambaran umum tentang sistem dengan ps aux. a untuk menunjukkan proses semua
 | syslog       200  2.7  0.0 222508  5284 ?        Ssl  05:08   0:00 /usr/sbin/rsyslogd -n -iNONE
 | root         206  0.2  0.0   3160  1224 hvc0     Ss+  05:08   0:00 /sbin/agetty -o -p -- \u --noclear --keep-baud - 1152
 | root         209  0.1  0.0   3116  1140 tty1     Ss+  05:08   0:00 /sbin/agetty -o -p -- \u --noclear - linux
-| root         240  2.9  0.2 107008 22532 ?        Ssl  05:08   0:00 /usr/bin/python3 /usr/share/unattended-upgrades/unatt
+| root        | 240 | 2.9 | 0.2 | 107008 | 22532 ? |        Ssl | 05:08  | 0:00 | /usr/bin/python3 /usr/share/unattended-upgrades/unatt |
 | root         266  1.5  0.0  17276  6612 ?        Ss   05:08   0:00 /usr/lib/systemd/systemd-timedated
 | root         309  0.0  0.0   2616   124 ?        Ss   05:09   0:00 /init
 | root         310  0.0  0.0   2616   124 ?        S    05:09   0:00 /init
