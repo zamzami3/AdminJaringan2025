@@ -46,34 +46,35 @@ Perintah ps untuk memantau proses, dapat menampilkan PID, UID, prioritas, dan te
 Ada gambaran umum tentang sistem dengan ps aux. a untuk menunjukkan proses semua user, u untuk informasi terperinci tiap proses, x untuk menujukkan proses yang tidak terkait dengan terminal 
 
 ~# ps aux 
-USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
-root           1  7.9  0.1  21604 12852 ?        Ss   05:08   0:00 /sbin/init
-root           2  0.0  0.0   2616  1444 ?        Sl   05:08   0:00 /init
-root           6  0.0  0.0   3024   420 ?        Sl   05:08   0:00 plan9 --control-socket 6 --log-level 4 --server-fd 7
-root          54  2.0  0.1  33896 12644 ?        S<s  05:08   0:00 /usr/lib/systemd/systemd-journald
-root          97  2.2  0.0  23992  6028 ?        Ss   05:08   0:00 /usr/lib/systemd/systemd-udevd
-systemd+     155  1.7  0.1  21452 12024 ?        Ss   05:08   0:00 /usr/lib/systemd/systemd-resolved
-systemd+     156  1.0  0.0  91020  6552 ?        Ssl  05:08   0:00 /usr/lib/systemd/systemd-timesyncd
-root         162  0.1  0.0   4236  2688 ?        Ss   05:08   0:00 /usr/sbin/cron -f -P
-message+     163  0.7  0.0   9584  5044 ?        Ss   05:08   0:00 @dbus-daemon --system --address=systemd: --nofork --n
-root         178  5.9  0.5 2140292 42408 ?       Ssl  05:08   0:00 /usr/lib/snapd/snapd
-root         179  4.0  0.1  17976  8352 ?        Ss   05:08   0:00 /usr/lib/systemd/systemd-logind
-root         183  4.0  0.1 1756096 14080 ?       Ssl  05:08   0:00 /usr/libexec/wsl-pro-service -vv
-syslog       200  2.7  0.0 222508  5284 ?        Ssl  05:08   0:00 /usr/sbin/rsyslogd -n -iNONE
-root         206  0.2  0.0   3160  1224 hvc0     Ss+  05:08   0:00 /sbin/agetty -o -p -- \u --noclear --keep-baud - 1152
-root         209  0.1  0.0   3116  1140 tty1     Ss+  05:08   0:00 /sbin/agetty -o -p -- \u --noclear - linux
-root         240  2.9  0.2 107008 22532 ?        Ssl  05:08   0:00 /usr/bin/python3 /usr/share/unattended-upgrades/unatt
-root         266  1.5  0.0  17276  6612 ?        Ss   05:08   0:00 /usr/lib/systemd/systemd-timedated
-root         309  0.0  0.0   2616   124 ?        Ss   05:09   0:00 /init
-root         310  0.0  0.0   2616   124 ?        S    05:09   0:00 /init
-root         311  0.3  0.0   6072  5160 pts/0    Ss   05:09   0:00 -bash
-root         312  0.0  0.0   6668  4608 pts/1    Ss   05:09   0:00 /bin/login -f
-root         410  1.4  0.1  20256 11464 ?        Ss   05:09   0:00 /usr/lib/systemd/systemd --user
-root         411  0.0  0.0  21152  1712 ?        S    05:09   0:00 (sd-pam)
-root         426  0.1  0.0   6072  5012 pts/1    S+   05:09   0:00 -bash
-root         505  0.0  0.0  23996  3040 ?        S    05:09   0:00 (udev-worker)
-root         506  0.0  0.0  23996  3108 ?        S    05:09   0:00 (udev-worker)
-root         507  0.0  0.0   8280  4172 pts/0    R+   05:09   0:00 ps aux
+| USER | PID | %CPU | %MEM | VSZ | RSS | TTY | STAT | START | TIME COMMAND |
+|------|-----|------|------|-----|-----|-----|------|-------|--------------| 
+| root           1  7.9  0.1  21604 12852 ?        Ss   05:08   0:00 /sbin/init |
+| root           2  0.0  0.0   2616  1444 ?        Sl   05:08   0:00 /init |
+| root           6  0.0  0.0   3024   420 ?        Sl   05:08   0:00 plan9 --control-socket 6 --log-level 4 --server-fd 7 |
+| root          54  2.0  0.1  33896 12644 ?        S<s  05:08   0:00 /usr/lib/systemd/systemd-journald |
+| root          97  2.2  0.0  23992  6028 ?        Ss   05:08   0:00 /usr/lib/systemd/systemd-udevd |
+| systemd+     155  1.7  0.1  21452 12024 ?        Ss   05:08   0:00 /usr/lib/systemd/systemd-resolved |
+| systemd+     156  1.0  0.0  91020  6552 ?        Ssl  05:08   0:00 /usr/lib/systemd/systemd-timesyncd |
+| root         162  0.1  0.0   4236  2688 ?        Ss   05:08   0:00 /usr/sbin/cron -f -P |
+| message+     163  0.7  0.0   9584  5044 ?        Ss   05:08   0:00 @dbus-daemon --system --address=systemd: --nofork --n
+| root         178  5.9  0.5 2140292 42408 ?       Ssl  05:08   0:00 /usr/lib/snapd/snapd
+| root         179  4.0  0.1  17976  8352 ?        Ss   05:08   0:00 /usr/lib/systemd/systemd-logind
+| root         183  4.0  0.1 1756096 14080 ?       Ssl  05:08   0:00 /usr/libexec/wsl-pro-service -vv
+| syslog       200  2.7  0.0 222508  5284 ?        Ssl  05:08   0:00 /usr/sbin/rsyslogd -n -iNONE
+| root         206  0.2  0.0   3160  1224 hvc0     Ss+  05:08   0:00 /sbin/agetty -o -p -- \u --noclear --keep-baud - 1152
+| root         209  0.1  0.0   3116  1140 tty1     Ss+  05:08   0:00 /sbin/agetty -o -p -- \u --noclear - linux
+| root         240  2.9  0.2 107008 22532 ?        Ssl  05:08   0:00 /usr/bin/python3 /usr/share/unattended-upgrades/unatt
+| root         266  1.5  0.0  17276  6612 ?        Ss   05:08   0:00 /usr/lib/systemd/systemd-timedated
+| root         309  0.0  0.0   2616   124 ?        Ss   05:09   0:00 /init
+| root         310  0.0  0.0   2616   124 ?        S    05:09   0:00 /init
+| root         311  0.3  0.0   6072  5160 pts/0    Ss   05:09   0:00 -bash
+| root         312  0.0  0.0   6668  4608 pts/1    Ss   05:09   0:00 /bin/login -f
+| root         410  1.4  0.1  20256 11464 ?        Ss   05:09   0:00 /usr/lib/systemd/systemd --user
+| root         411  0.0  0.0  21152  1712 ?        S    05:09   0:00 (sd-pam)
+| root         426  0.1  0.0   6072  5012 pts/1    S+   05:09   0:00 -bash
+| root         505  0.0  0.0  23996  3040 ?        S    05:09   0:00 (udev-worker)
+| root         506  0.0  0.0  23996  3108 ?        S    05:09   0:00 (udev-worker)
+| root         507  0.0  0.0   8280  4172 pts/0    R+   05:09   0:00 ps aux
 
 ---
 
