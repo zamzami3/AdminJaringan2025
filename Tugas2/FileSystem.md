@@ -28,5 +28,22 @@ Yang menunjukkan lokasi file berdasarkan posisi saat ini.
 # Filesystem Mounting and Unmounting
 `mount /dev/sda /users`
 
-Linux ada opsi lazy unmount (**umount -l**) yang menghapus filesystem. Jika **umount -f** itu berguna saat filesystem sibuk. Sedangkan **lsof** atau **fuser** mengetahui proses yang menggunakan filesystem dan mematikan.
+Linux ada opsi lazy unmount (**umount -l**) yang menghapus filesystem. Jika **umount -f** itu berguna saat filesystem sibuk. Sedangkan **lsof** atau **fuser** mengetahui proses yang menggunakan filesystem dan mematikan. 
+
+# File Tree
+Penamaan di UNIX tidak kompatible secara bersamaan, sulit untuk upgrade operating system. 
+Root filesystem bagian inti dari sistem file yang setidaknya mencakup direktori root (`/`) serta sejumlah file dan subdirektori penting.  
+
+- Kernel OS biasanya disimpan di dalam `/boot`, tapi nama dan lokasinya bisa bervariasi tergantung operating system. Di BSD dan beberapa sistem UNIX lainnya, kernel bukan hanya satu file, melainkan kumpulan komponen.  
+- Konfigurasi sistem terdapat di dalam `/etc`.  
+     - Perintah penting untuk administrator ada di `/sbin` dan `/bin`.
+     - File sementara kadang disimpan di `/tmp`.
+     - Perangkat sistem (`/dev`) dulu bagian dari root filesystem, tetapi sekarang lebih sering dipasang sebagai filesystem virtual terpisah.  
+
+Struktur Direktori Tambahan 
+- Library bersama dan file lain ditemukan di `/lib`, `/lib64` atau beberapa sistem di `/usr/lib`, dengan `/lib` hanya sebagai symbolic link.  
+- Direktori `/usr` menyimpan program yang tidak kritis untuk sistem, termasuk dokumentasi, pustaka tambahan, dan konfigurasi tambahan (seperti di FreeBSD yang menggunakan `/usr/local`).  
+- Direktori `/var` berisi log sistem, direktori spool, data akuntansi, serta file lain yang sering berubah dan spesifik untuk setiap host.  
+
+![Picture2](https://github.com/ferryastika/unix-and-linux-sysadmin-notes/blob/main/the-filesystem/data/pathnames.png)
 
