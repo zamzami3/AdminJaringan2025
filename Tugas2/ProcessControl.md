@@ -55,7 +55,7 @@ Untuk proses tertentu, bisa menggunakan grep untuk filter output ps
 `$ ps aux | grep -v grep | grep firefox`
 
 Menentukan PID suatu proses dengan menggunakan pgrep atau pidof.
-`$ pgrep firefox
+`$ pgrep firefox`
 `$ pidof /usr/bin/firefox`
 
 # Pemantauan interaktif
