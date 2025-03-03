@@ -113,4 +113,12 @@ Perintah **umask** dipakai untuk mengatur izin default untuk file dan direktori 
 
 # Access Control List
 Model izin tradisional UNIX memang sederhana dan efektif, tetapi memiliki keterbatasan. Misalnya, sulit memberikan kepemilikan file kepada beberapa pengguna sekaligus, atau mengatur izin berbeda untuk kelompok pengguna tertentu pada file yang berbeda.
-Access Control Lists (ACLs) adalah solusi untuk memperluas model izin tradisional Unix. ACL memungkinkan satu file memiliki beberapa pemilik dan memungkinkan kelompok pengguna memiliki izin berbeda pada file yang berbeda. 
+Access Control Lists (ACLs) adalah solusi untuk memperluas model izin tradisional Unix. ACL memungkinkan satu file memiliki beberapa pemilik dan memungkinkan kelompok user punya izin berbeda pada file yang berbeda. 
+
+`$ getfacl /etc/passwd`
+
+`$ setfacl -m u:abdou:rw /etc/passwd`
+
+2 jenis ACL ada **ACL POSIX** dan **ACL NFSv4**
+ACL POSIX versi tradisional dan didukung sebagian besar operating system, mirip UNIX (Linux, FreeBSD, Solaris)
+ACL NFSv4 jenis yang lebih baru, seperti NFS dan SMB dan didukung oleh beberapa sistem operasi, mirip UNIX (Linux dan FreeBSD). Mirip dengan ACL POSIX tapi ada fitur tambahan yang punya ACL default dipakai untuk mengatur ACL file dan direktori baru. 
