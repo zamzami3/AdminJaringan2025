@@ -46,6 +46,7 @@ Perintah ps untuk memantau proses, dapat menampilkan PID, UID, prioritas, dan te
 Ada gambaran umum tentang sistem dengan ps aux. a untuk menunjukkan proses semua user, u untuk informasi terperinci tiap proses, x untuk menujukkan proses yang tidak terkait dengan terminal 
  
 ![perintahpsaux](perintahpsaux.png)
+![perintahpsaux8](periintahpsaux8.png)
 
 Ada argumen lax, untuk informasi lebih teknis tentang proses dan sedikit lebih cepat daripada aux karena tidak perlu menyelesaikan username dan grup. 
 
@@ -58,4 +59,55 @@ Menentukan PID suatu proses dengan menggunakan pgrep atau pidof.
 `$ pgrep firefox`
 `$ pidof /usr/bin/firefox`
 
-# Pemantauan interaktif
+## Interactive Monitoring
+Perintah top menampilkan informasi sistem secara real-time, termasuk ringkasan sistem dan daftar proses yang sedang berjalan. Informasi yang ditampilkan dapat dikonfigurasi oleh user dan disimpan agar tetap tersedia setelah restart. Secara default, tampilan diperbarui setiap 1-2 detik tergantung pada sistem.
+Sebagai alternatif, **htop** adalah penampil proses interaktif berbasis teks yang membutuhkan ncurses. Daripada top, htop memiliki antarmuka yang lebih intuitif, mendukung scrolling vertikal dan horizontal untuk melihat seluruh proses beserta command line lengkapnya, serta menawarkan lebih banyak opsi operasi.
+
+## Nice and renice
+**Niceness dalam Prioritas Proses**  
+Niceness yakni nilai numerik yang memberi petunjuk ke kernel terkait prioritas suatu process. Nilai tinggi (+19 di Linux) berarti prioritas rendah, sedangkan nilai rendah atau negatif (-20 di Linux) berarti prioritasnya tinggi. Proses dengan prioritas rendah mendapatkan lebih sedikit waktu CPU dibandingkan proses dengan prioritas tinggi. Jika menjalankan tugas berat di latar belakang, menggunakan nilai niceness tinggi memungkinkan proses lain tetap berjalan lancar. 
+
+## /proc file system
+**/proc: Pseudo-Filesystem untuk Informasi Sistem**  
+Di Linux, **ps** dan **top** membaca informasi status proses dari **/proc**, sebuah pseudo-filesystem yang menyajikan data tentang keadaan sistem. Selain informasi proses, **/proc** juga berisi statistik sistem. Setiap proses direpresentasikan sebagai direktori bernama sesuai PID-nya, yang berisi berbagai file berisi data seperti command line, environment variables, dan file descriptors.
+
+![img](https://github.com/ferryastika/unix-and-linux-sysadmin-notes/blob/main/process-control/data/process-information.png)
+
+## Strace dan Truss
+Untuk mengetahui apa yang dilakukan suatu proses, gunakan **strace** di Linux atau **truss** di FreeBSD dan akan melacak system calls dan sinyal yang diterima proses, berguna untuk debugging atau memahami cara kerja suatu program. 
+
+## Runaway proses
+Adakalanya, sebuah proses dapat berhenti merespons dan menggunakan 100% CPU, yang disebut **runaway process**. Akhirnya menyebabkan sistem menjadi lambat karena proses lain mendapat akses terbatas ke CPU. Untuk berhenti, pakai perintah **kill**. Jika proses tidak merespons sinyal **TERM**, gunakan sinyal **KILL** untuk memaksa berhenti. 
+Kita bisa menyelidiki penyebab **runaway process**, pakai **strace** (Linux) atau **truss** (FreeBSD). Jika proses tersebut menghasilkan output berlebihan, ia bisa memenuhi seluruh filesystem. Gunakan **df -h** untuk memeriksa penggunaan filesystem. Jika penuh, cari file atau direktori terbesar dengan **du**. Untuk melihat file yang sedang dibuka oleh proses tersebut, gunakan **lsof**.
+
+![perintahlsof](perintahlsof.png)
+
+## Proses Periodic
+### cron: schedule command 
+Daemon **cron** (atau **crond** di RedHat) yakni alat tradisional untuk menjalankan perintah secara otomatis sesuai jadwal. **cron** berjalan sejak sistem dinyalakan dan terus aktif selama sistem hidup. Konfigurasi **cron** disimpan dalam file **crontab**, yang berisi daftar perintah beserta waktu eksekusinya. Perintah dalam **crontab** dijalankan oleh **sh** hampir semua yang bisa dilakukan di shell dapat dijadwalkan. Crontab untuk setiap pengguna disimpan di **/var/spool/cron** (Linux) atau **/var/cron/tabs** (FreeBSD).
+
+### format of crontab
+File **crontab** ada 5 kolom untuk menentukan hari, tanggal, dan waktu eksekusi, diikuti oleh perintah yang akan dijalankan pada interval tersebut.
+
+#### crontab management
+Perintah **crontab** digunakan untuk membuat, mengubah, dan menghapus crontab. Opsi **-e** digunakan untuk mengedit file crontab, **-l** untuk menampilkan isi crontab, dan **-r** untuk menghapus file crontab.
+
+### System timer
+Yakni file konfigurasi unit dengan akhiran **.timer**, digunakan sebagai alternatif **cron jobs** dan lebih fleksibel + kuat dibandingkan cron.  
+Unit timer diaktifkan oleh unit **service** terkait, yang akan berjalan pada waktu yang ditentukan dalam unit timer. Timer juga bisa dipicu saat sistem boot atau oleh suatu event.  
+Perintah **systemctl** digunakan untuk mengelola unit systemd, sedangkan opsi **list-timers** digunakan untuk menampilkan timer yang aktif.
+
+### Mengirim email
+Kita bisa mengirim email secara otomatis berisi output laporan harian atau hasil eksekusi perintah menggunakan **cron** atau **systemd timers**.
+
+### Cleaning up a sistem file
+Kita bisa menggunakan **cron** atau **systemd timers** untuk menjalankan skrip pembersihan filesystem. Misalnya, membuat skrip untuk menghapus isi direktori **trash** setiap hari pada tengah malam.
+
+### Rotating a log file
+Rotasi log berarti membagi file log menjadi beberapa segmen berdasarkan ukuran atau tanggal, dengan menyimpan beberapa versi lama agar tetap tersedia. Karena rotasi log terjadi secara berkala, tugas ini dijadwalkan menggunakan **cron** atau **systemd timers**.
+
+### Running batch jobs
+Kalau ada beberapa perhitungan yang berjalan lama lebih baik dijalankan sebagai batch job. Misalnya, pesan yang menumpuk dalam antrean atau database dapat diproses sekaligus menggunakan **cron job** sebagai bagian dari proses **ETL (Extract, Transform, Load)** ke lokasi lain, misalnya seprti **data warehouse**.
+
+### Backing up dan mirroring
+Untuk mencadangkan direktori ke sistem jarak jauh secara otomatis. **Mirror** adalah salinan **byte-per-byte** dari sistem file atau direktori yang disimpan di sistem lain. Mirror dapat digunakan sebagai bentuk cadangan atau untuk mendistribusikan file ke beberapa sistem. Eksekusi **rsync** secara berkala dapat digunakan untuk menjaga mirror tetap terbaru, alias up to date.
