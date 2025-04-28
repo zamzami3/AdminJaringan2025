@@ -91,7 +91,7 @@ Adapter 2: Internal Network
 
 3. Menambahkan konfigurasi file `etc/samba/smb.conf`
 
-   ![App Screenshot](image/konfigurasi-samba.png.png)
+   ![App Screenshot](image/konfigurasi-samba.png)
 
 4. Restart layanan samba
 
