@@ -74,70 +74,70 @@ Adapter 2: Internal Network
 
 11. Melihat sudah tersambung dengan server, pakai perintah `ntpq -p`
 
-   ![App Screenchot](validasi-koneksi-ntp.png)
+   ![App Screenchot](image/validasi-koneksi-ntp.png)
 
 #### Konfigurasi File Samba di VM 1 (No GUI)
 
 1. Instalasi samba
    
-   ![App Screenshot](install-samba.png)
+   ![App Screenshot](image/install-samba.png)
 
 2. Membuat folder share dan mengatur permission
 
-   ![App Screenshot](mkdir-samba.png)
+   ![App Screenshot](image/mkdir-samba.png)
 
    Sebelumnya, saya sudah membuat directory /home/share, maka dari
    itu dalam output tertera bahwa **file exist**
 
 3. Menambahkan konfigurasi file `etc/samba/smb.conf`
 
-   ![App Screenshot](konfigurasi-samba.png.png)
+   ![App Screenshot](image/konfigurasi-samba.png.png)
 
 4. Restart layanan samba
 
-   ![App Screenshot](restart-status-samba.png)
+   ![App Screenshot](image/restart-status-samba.png)
 
 #### Konfigurasi DNS Server pada VM 1
 1. Instalasi paket DNS Server
 
-   ![App Screenshot](dns-bind-utils.png)
+   ![App Screenshot](imgage/dns-bind-utils.png)
 
 2. Menambah konfigurasi pada file `/etc/bind/named.conf`
 
-   ![App Screenshot](konfigurasi-dns.png)
+   ![App Screenshot](image/konfigurasi-dns.png)
 
 3. Mengedit file opsi `/etc/bind/named/conf.options`
 
-   ![App Screenshot](konfigurasi-dns-conf-options.png)
+   ![App Screenshot](image/konfigurasi-dns-conf-options.png)
 
 4. Membuat internal zone di `/etc/bind/named.cond.internal-zones`
 
-   ![App Screenshot](internal-zone.png)
+   ![App Screenshot](image/internal-zone.png)
 
 5. Menambahkan opsi `-4` pada file `/etc/default/named`
 
-   ![App Screenshot](tambah-min4.png)
+   ![App Screenshot](image/tambah-min4.png)
 
 6. Membuat konfigurasi domain lokal
 
-   ![App Screenshot](konfigurasi-domain-lokal.png)
+   ![App Screenshot](image/konfigurasi-domain-lokal.png)
 
 7. Membuat file konfigurasi berdasarkan IP address
 
-   ![App Screenshot](konfigurasi-ip-addr.png)
+   ![App Screenshot](image/konfigurasi-ip-addr.png)
 
 ### Konfigurasi VM 2 (client)
 
-   ![App Screenshot](vm2.png)
+   ![App Screenshot](image/vm2.png)
 
 Melakukan ping
 
-   ![App Screenshot](ping-address.png)
+   ![App Screenshot](image/ping-address.png)
 
-   ![App Screenshot](ping-gateaway.png)
+   ![App Screenshot](image/ping-gateaway.png)
 
-   ![App Screenshot](ping-1111.png)
+   ![App Screenshot](image/ping-1111.png)
 
-   ![App Screenshot](ping-8888.png)
+   ![App Screenshot](image/ping-8888.png)
 
-   ![App Screenshot](ping-google.png)
+   ![App Screenshot](image/ping-google.png)
