@@ -100,7 +100,7 @@ Adapter 2: Internal Network
 #### Konfigurasi DNS Server pada VM 1
 1. Instalasi paket DNS Server
 
-   ![App Screenshot](imgage/dns-bind-utils.png)
+   ![App Screenshot](image/dns-bind-utils.png)
 
 2. Menambah konfigurasi pada file `/etc/bind/named.conf`
 
