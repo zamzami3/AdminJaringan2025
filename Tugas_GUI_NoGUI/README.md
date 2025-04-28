@@ -4,7 +4,7 @@
 <br />
 
 <div align="center">
-  ![PENS Logo No Background](image/LogoPENSnNoBg.png)
+  ![PENS](image/LogoPENSnNoBg.png)
 
   <h3 style="text-align: center;">Dosen Pengampu:</h3>
   <h4 style="text-align: center;">Dr. Ferry Astika Saputra, S.T., M.Sc.</h4>
