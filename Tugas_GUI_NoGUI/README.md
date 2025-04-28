@@ -35,7 +35,7 @@ Adapter 2: Internal Network
 
 1. Cek IP Address dengan perintah **ip a**
 
-   ![ip a](images/ipa_nogui.png)
+   ![ip a](image/ipa_nogui.png)
 
 2. Tambahkan file `nano -l -w /etc/network/interfaces`
 
