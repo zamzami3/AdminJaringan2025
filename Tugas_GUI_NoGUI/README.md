@@ -61,6 +61,7 @@ Adapter 2: Internal Network
 #### Instalasi NTP Client
 
 8. Instal NTP
+   
    ![Add Screenshot](image/install-ntp.png)
 
 9. Perintah `sudo nano /etc/ntpsec/ntp.conf` untuk set server
