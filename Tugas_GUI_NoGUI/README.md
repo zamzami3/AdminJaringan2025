@@ -51,7 +51,7 @@ Adapter 2: Internal Network
 
 5. Menambah kode ke `/etc/iptables/rules.v4` menggunakan perintah `sudo nano -l -w /etc/iptables/rules.v4.`
 
-    ![Add Screenshot](image/addcode.png)
+    ![Add Screenshot](image/addcode2.png)
 
 6. Menjalankan perintah `sudo iptables-restore < /etc/iptables/rules.v4`
 
