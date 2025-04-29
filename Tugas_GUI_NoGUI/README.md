@@ -112,7 +112,7 @@ Adapter 2: Internal Network
 
    ![App Screenshot](image/konfigurasi-dns-conf-options.png)
 
-4. Membuat internal zone di `/etc/bind/named.cond.internal-zones`
+4. Membuat internal zone di `/etc/bind/named.conf.internal-zones`
 
    ![App Screenshot](image/internal-zone.png)
 
