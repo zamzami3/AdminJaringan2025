@@ -1,18 +1,26 @@
-# Laporan Praktikum DNS
+<div align="center">
+  <h1 style="text-align: center;font-weight: bold">Laporan Praktikum<br>Workshop Administrasi Jaringan</h1>
+  <h4 style="text-align: center;">Laporan Praktikum DNS</h4>
+</div>
+<br />
 
-![Logo_PENS.png](Logo_PENS.png)
+<div align="center">
+  
+  ![Logo_PENS.png](Logo_PENS.png)
+  
+  <h3 style="text-align: center;">Dosen Pengampu:</h3>
+  <h4 style="text-align: center;">Dr. Ferry Astika Saputra, S.T., [M.Sc.](http://m.sc/)</h4>
 
-Mata Kuliah : Workshop Administrasi Jaringan
+  <h3 style="text-align: center;">Kelompok 1:</h3>
+  <p style="text-align: center;">
+    <strong>Zalfail Mumtaza Attamami (3123600003)</strong><br>
+    <strong>Salwa Fadhila Rahmania (3123600008)</strong><br>
+    <strong>Nayla Herfiana Putri (3123600015)</strong>
+  </p>
 
-Dosen Pengampu :  Dr Ferry Astika Saputra ST, [M.Sc](http://m.sc/)
-
-Kelompok 1 
-
-Anggota :
-
-1. Zalfail Mumtaza Attamami  (3123600003)
-2. Salwa Fadhila Rahmania (3123600008)
-3. Nayla Herfiana Putri (3123600015)
+<h3 style="text-align: center;line-height: 1.5">Politeknik Elektronika Negeri Surabaya<br>Departemen Teknik Informatika Dan Komputer<br>Program Studi STr. Teknik Informatika<br>2024/2025</h3>
+  <hr><hr>
+</div>
 
 ---
 
