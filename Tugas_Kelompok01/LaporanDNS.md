@@ -9,7 +9,7 @@
   ![Logo_PENS.png](Logo_PENS.png)
   
   <h3 style="text-align: center;">Dosen Pengampu:</h3>
-  <h4 style="text-align: center;">Dr. Ferry Astika Saputra, S.T., [M.Sc.](http://m.sc/)</h4>
+  <h4 style="text-align: center;">Dr. Ferry Astika Saputra, S.T., M.Sc.</h4>
 
   <h3 style="text-align: center;">Kelompok 1:</h3>
   <p style="text-align: center;">
