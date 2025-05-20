@@ -93,6 +93,7 @@ Macam-macam layanan User-Agent, yakni;
  5. Masalah teknis, seperti gangguan server, dapat mengganggu layanan email.
 
  Sumber:
+ 
  https://www.geeksforgeeks.org/introduction-to-electronic-mail/
  
  https://www.naukri.com/code360/library/electronic-mail-in-computer-networks 
