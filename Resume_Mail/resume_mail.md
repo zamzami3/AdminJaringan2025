@@ -92,8 +92,8 @@ Macam-macam layanan User-Agent, yakni;
  4. Potensi miskomunikasi karena kurangnya nada dan bahasa tubuh dalam pesan tertulis.
  5. Masalah teknis, seperti gangguan server, dapat mengganggu layanan email.
 
- Sumber:
- 
+ **Sumber:**
+
  https://www.geeksforgeeks.org/introduction-to-electronic-mail/
  
  https://www.naukri.com/code360/library/electronic-mail-in-computer-networks 
